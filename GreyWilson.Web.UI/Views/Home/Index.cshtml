@@ -1,0 +1,9 @@
+﻿@model GreyWilson.Web.UI.Models.Home.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Current Claims</h2>
+@await Html.PartialAsync("~/Views/Claims/_Grid.cshtml", Model.Claims)
+

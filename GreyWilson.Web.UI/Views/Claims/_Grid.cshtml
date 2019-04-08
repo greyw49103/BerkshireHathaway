@@ -1,0 +1,33 @@
+﻿@using System.Collections.Generic
+@using GreyWilson.Data
+@model IEnumerable<GreyWilson.Data.Claim>
+
+    <div class="row">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Customer Number</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Claim Amount</th>
+                    <th scope="col">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Claim claim in Model){
+                <tr>
+                    <th scope="row">@claim.ID</th>
+                    <td>@claim.CustomerNumber</td>
+                    <td>@claim.LastName</td>
+                    <td>@claim.Description</td>
+                    <td>@claim.ClaimAmount.ToString("C")</td>
+                    <td>@claim.CreatedOn</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+
+    </div>
